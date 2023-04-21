@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ecommerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Cart</title>
+</head>
+<body>
+    <nav class="header">
+        <div class="head-img">
+            <img id="logo" src="./img/logo.png" alt="logo">
+        </div>
+        <ul class="header-ul">
+            <li><a href="ecommerce.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class='fa fa-shopping-bag' style='font-size:32px;color: black;'></i></a></li>
+        </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="talk_cart">
+           <h1 id="h1_talk">#cart</h1>
+           <p>Add your coupon code & save upto 70%!</p>
+        </div>
+    </section>
+    <section id="table-cart" style="margin-top: 70px;">
+        <table>
+            <thead class="table-head">
+                <tr class="table-headrow">
+                    <td class="table-headdata"><strong>REMOVE</strong></td>
+                    <td class="table-headdata"><strong>IMAGE</strong></td>
+                    <td class="table-headdata"><strong>PRODUCT</strong></td>
+                    <td class="table-headdata"><strong>PRICE</strong></td>
+                    <td class="table-headdata"><strong>QUANTITY</strong></td>
+                    <td class="table-headdata"><strong>SUBTOTAL</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-bodyrow" id="remove_1">
+                    <td onclick="remove1()"><a href="#"><i class="fa fa-times-circle"></i></a></td>
+                    <td><img src="./img/products/f1.jpg"></td>
+                    <td class="trdatap" >Cartoon Astronaut T-shirts</td>
+                    <td class="trdatap" >$78</td>
+                    <td><input class="trquantity" id="inp_tr1" type="number" value="1" onkeyup="cartprice()"></td>
+                    <td><input class="trsubtotal" type="number" value="78" id="inp_subt1"></td>
+                </tr>
+                <tr class="table-bodyrow" id="remove_2">
+                    <td onclick="remove2()"><a href="#"><i class="fa fa-times-circle"></i></a></td>
+                    <td><img src="./img/products/f2.jpg"></td>
+                    <td class="trdatap" >Cartoon Holiday T-shirts</td>
+                    <td class="trdatap" >$78</td>
+                    <td><input class="trquantity" id="inp_tr2" type="number" value="1" onkeyup="cartprice()"></td>
+                    <td><input class="trsubtotal" type="number" value="78" id="inp_subt2"></td>
+                </tr>
+                <tr class="table-bodyrow" id="remove_3">
+                    <td onclick="remove3()"><a href="#"><i class="fa fa-times-circle"></i></a></td>
+                    <td><img src="./img/products/f3.jpg"></td>
+                    <td class="trdatap" >Cartoon Funday T-shirts</td>
+                    <td class="trdatap" >$78</td>
+                    <td><input class="trquantity" id="inp_tr3" type="number" value="1" onkeyup="cartprice()"></td>
+                    <td><input class="trsubtotal" type="number" value="78" id="inp_subt3"></td>
+                </tr>
+                <tr class="table-bodyrow" id="remove_4">
+                    <td onclick="remove4()"><a href="#"><i class="fa fa-times-circle"  id="rem"></i></a></td>
+                    <td><img src="./img/products/f4.jpg"></td>
+                    <td class="trdatap" >Cartoon Seasonal T-shirts</td>
+                    <td class="trdatap" >$78</td>
+                    <td><input class="trquantity" id="inp_tr4" type="number" value="1" onkeyup="cartprice()"></td>
+                    <td><input class="trsubtotal" type="number" value="78" id="inp_subt4"></td>
+                </tr>
+            </tbody>    
+        </table>
+    </section>
+    <section class="coupon">
+        <div class="coupon_code_aside">
+            <h2>Apply Coupon</h2>
+            <div class="coupon-code">
+                <input type="text" name="coupon-code">
+                <button id="codeapply">Apply</button>
+            </div>
+        </div>
+        <div class="price" style="border: 2px solid gray;">
+                <h2>Cart Totals</h2>
+                <table class="subtotal-table">
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>$312</td>
+                    </tr>
+                    <tr id="tr-2">
+                        <td>Shipping Charges</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><b>Total</b></td>
+                        <td><b>$312</b></td>
+                    </tr>
+                </table>
+                <button id="checkout" onclick="butc()"><a href="http://onlinesbi.sbi">Proceed to checkout</a></button>
+        </div>
+    </section>
+    <footer class="f-content">
+        <div class="f-cara">
+            <span class="f-img"></span><img src="./img/logo.png" alt="logo"></span>
+            <span class="f-contact"><p class="f-contpara"><b>Contact</b></p></span>
+            <p class="f-contpara" id="f-add"><b>Address: </b><span>502 Washington Road. Street 32. San Francisco</span></p>
+            <p class="f-contpara" id="f-ph"><b>Phone: </b><span>+01 2222365 /(+91) 01 23456789</span></p>
+            <p class="f-contpara" id="f-hrs"><b>Hours: </b><span>10:00 - 18:00. Mon - Sat</span></p> 
+            <span class="f-fu"><p class="f-contpara" id="f-follow"><b>Follow Us</b></p></span>
+            <span class="f-span1"><i class="fa fa-facebook-square" style="font-size:38px;color:blue"></i>
+            <i class='fa fa-amazon' style='font-size:30px'></i>
+            <i class='fa fa-twitter' style='font-size:36px'></i>
+            <i class='fa fa-youtube' style='font-size:32px;color: red;'></i>
+            
+        </div>
+        <div class="f-about">
+            <h5>About</h5>
+            <ul>
+                <li><a class="about-acc" href="#"> About Us</a></li>
+                <li><a class="about-acc" href="#"> Delivery Information</a></li>
+                <li><a class="about-acc" href="#"> Privacy</a></li>
+                <li><a class="about-acc" href="#"> Terms & Conditions</a></li>
+                <li><a class="about-acc" href="#"> Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="f-acc">
+            <h5>My Account</h5>
+            <ul>
+                <li><a class="about-acc" href="#"> Sign In</a></li>
+                <li><a class="about-acc" href="#"> View Cart</a></li>
+                <li><a class="about-acc" href="#"> My Wishlist</a></li>
+                <li><a class="about-acc" href="#"> Track My Order</a></li>
+                <li><a class="about-acc" href="#"> Help</a></li>
+            </ul>
+        </div>
+        <div class="f-app">
+            <h5>Install App</h5>
+            <p class="paraspace" id="f-app_paramargin">From App Store or Google Play</p>
+            <span><img src="./img/pay/app.jpg" alt="app">
+            <img src="./img/pay/play.jpg" alt="play"></span>
+            <p>Secured Payment Gateways</p>
+            <img src="./img/pay/pay.png" alt="pa">
+        </div>
+    </footer>
+
+
+    <script>
+        function cartprice(){
+            let quantity1 = document.getElementById("inp_tr1").value;
+            let quantity2 = document.getElementById("inp_tr2").value;
+            let quantity3 = document.getElementById("inp_tr3").value;
+            let quantity4 = document.getElementById("inp_tr4").value;
+           let subtotal1 = 78*quantity1;
+           let subtotal2 = 78*quantity2;
+           let subtotal3 = 78*quantity3;
+           let subtotal4 = 78*quantity4;
+            document.getElementById("inp_subt1").value = subtotal1;
+            document.getElementById("inp_subt2").value = subtotal2;
+            document.getElementById("inp_subt3").value = subtotal3;
+            document.getElementById("inp_subt4").value = subtotal4;
+        }
+        function butc(){
+           alert("Confirm your payment")
+        }
+        function remove1(){
+            document.getElementById("remove_1").style.display ="none";
+        }
+        function remove2(){
+            document.getElementById("remove_2").style.display ="none";
+        }
+        function remove3(){
+            document.getElementById("remove_3").style.display ="none";
+        }
+        function remove4(){
+            document.getElementById("remove_4").style.display ="none";
+        }
+    </script>
+    <script src="./js/ecommerce.js"></script>
+</body>
+</html>
