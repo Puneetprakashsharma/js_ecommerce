@@ -92,7 +92,7 @@
                 <table class="subtotal-table">
                     <tr>
                         <td>Cart Subtotal</td>
-                        <td>$312</td>
+                        <td><b>$<input id="subtotalcart312" type="number" name="cart" placeholder="312" style="width: 150px;height: 28px; font-size: 20px;padding-left: 4px;border: none;"></b></td>
                     </tr>
                     <tr id="tr-2">
                         <td>Shipping Charges</td>
@@ -100,7 +100,7 @@
                     </tr>
                     <tr>
                         <td><b>Total</b></td>
-                        <td><b>$312</b></td>
+                        <td><b>$<input id="subtotalcart3121" type="number" name="cart" placeholder="312" style="width: 150px;height: 28px; font-size: 20px;padding-left: 4px;border: none;"></b></td>
                     </tr>
                 </table>
                 <button id="checkout" onclick="butc()"><a href="http://onlinesbi.sbi">Proceed to checkout</a></button>
@@ -165,7 +165,18 @@
             document.getElementById("inp_subt2").value = subtotal2;
             document.getElementById("inp_subt3").value = subtotal3;
             document.getElementById("inp_subt4").value = subtotal4;
+
+
+            
+            let quantity11 = document.getElementById("inp_subt1").value;
+            let quantity22 = document.getElementById("inp_subt2").value;
+            let quantity33 = document.getElementById("inp_subt3").value;
+            let quantity44 = document.getElementById("inp_subt4").value;
+            let sum =parseInt(quantity11) + parseInt(quantity22) + parseInt(quantity33) + parseInt(quantity44);
+            document.getElementById("subtotalcart312").value=sum;
+            document.getElementById("subtotalcart3121").value=sum;
         }
+        
         function butc(){
            alert("Confirm your payment")
         }
